@@ -106,5 +106,6 @@ int main() {
         l = dichotomize(lr[i][0]);
         r = dichotomize(lr[i][1]);
         printf("%d\n", discretizedArray[r] - discretizedArray[l - 1]);
+        // 注：此时可能存在 array[-1] 但该写法合法，不过指向内容未知，本题纯属侥幸，不推荐使用
     }
 }
