@@ -25,8 +25,8 @@ int dichotomizeMax(int num, int lenght) {
     }
 }
 
-int dichotomizeMin(int num, int lenght) {
-    int l = 0, r = lenght - 1;
+int dichotomizeMin(int num, int length) {
+    int l = 0, r = length - 1;
     while (l < r) {
         int mid = (l + r) >> 1;
         if (lst[mid] >= num) {
