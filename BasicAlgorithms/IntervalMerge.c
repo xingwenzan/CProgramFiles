@@ -88,4 +88,5 @@ int main() {
         scanf("%d%d", &interval[i].left, &interval[i].right);
     }
     printf("%d", merge(0, n - 1));
+    return 0;
 }
