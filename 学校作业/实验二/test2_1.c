@@ -1,5 +1,6 @@
 //
 // Created by 86159 on 2023-04-24.
+// 编写程序，判断输入的实数是 奇数、偶数、素数、整数或小数 的数字类型。 要求写出程序语句，并粘贴输入任意实数的运行结果截图
 //
 #include <stdbool.h>
 #include "stdio.h"
@@ -46,7 +47,7 @@ int main(){
         } else{
             printf("偶数\n");
         }
-        // 判断宿舍
+        // 判断素数
         int prime = isPrime(tmp);
         if(prime==2){
             printf("素数\n");
