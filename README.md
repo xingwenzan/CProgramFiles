@@ -17,6 +17,7 @@
     - [队列](AlgorithmBasicCourse/DataStructure/Queue.c)
     - [单调栈](AlgorithmBasicCourse/DataStructure/MonotonicStack.c)
     - [单调队列](AlgorithmBasicCourse/DataStructure/MonotonicQueue.c)
+    - [KMP字符串](AlgorithmBasicCourse/DataStructure/KMP.c)
 - [其他题解](OtherSolutions) &#x2002; 非系统性学习的题目
   - [左孩子右兄弟](OtherSolutions/LeftChildRightBrother.c)
 - [学校作业](学校作业)
