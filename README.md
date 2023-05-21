@@ -18,6 +18,8 @@
     - [单调栈](Basic/DataStructure/MonotonicStack.c)
     - [单调队列](Basic/DataStructure/MonotonicQueue.c)
     - [KMP字符串](Basic/DataStructure/KMP.c)
+    - [Tire 树](Basic/DataStructure/Trie)
+      - [Trie字符串统计](Basic/DataStructure/Trie/StringStatistics.c)
 - [其他题解](OtherSolutions) &#x2002; 非系统性学习的题目
   - [左孩子右兄弟](OtherSolutions/LeftChildRightBrother.c)
 - [学校作业](学校作业)
