@@ -7,6 +7,7 @@ add_executable(AlgorithmC main.c Basic/BasicAlgorithms/QuickSort/QuickSort.c Bas
         Basic/DataStructure/Trie/StringStatistics.c
         Basic/DataStructure/Trie/MaximumXorPair.c
         学校作业/实验三/test_3_2.c
-        学校作业/实验三/test_3_3.c
+        学校作业/实验三/test_3_3_1.c
         Basic/MathematicalKnowledge/Approximation/GreatestCommonDivisor.c
+        学校作业/实验三/test_3_3_2.c
 )

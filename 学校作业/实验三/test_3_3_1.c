@@ -8,7 +8,7 @@
 // 求阶乘函数
 int factorial(int n) {
     int ans = 1;
-    for (int i = 2; i < n; ++i) {
+    for (int i = 1; i <= n; ++i) {
         ans *= i;
     }
     return ans;
@@ -17,7 +17,7 @@ int factorial(int n) {
 // 阶乘相加
 int factorialSum(int n) {
     int ans = 0;
-    for (int i = 0; i < n; ++i) {
+    for (int i = 1; i <= n; ++i) {
         ans += factorial(i);
     }
     return ans;
