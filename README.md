@@ -24,6 +24,7 @@
             - [最大异或对](Basic/DataStructure/Trie/MaximumXorPair.c)
         - [并查集](Basic/DataStructure/AndLookup)
             - [合并集合](Basic/DataStructure/AndLookup/MergeCollection.c)
+            - [连通块中点的数量](Basic/DataStructure/AndLookup/ConnectedBlockPointNum.c)
     - [数学知识](Basic/MathematicalKnowledge) &#x2002; 包括质数，约数，欧拉函数，快速幂，扩展欧几里得算法，中国剩余定理，高斯消元，求组合数，容斥原理，博弈论等内容。
         - [约数](Basic/MathematicalKnowledge/Approximation)
             - [最大公约数](Basic/MathematicalKnowledge/Approximation/GreatestCommonDivisor.c)
