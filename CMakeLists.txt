@@ -12,4 +12,5 @@ add_executable(AlgorithmC main.c Basic/BasicAlgorithms/QuickSort/QuickSort.c Bas
         学校作业/实验三/test_3_3_2.c
         Basic/DataStructure/AndLookup/MergeCollection.c
         Basic/DataStructure/AndLookup/ConnectedBlockPointNum.c
+        Basic/DataStructure/AndLookup/FoodChain.c
 )
