@@ -42,11 +42,126 @@ int decks[4][15] = {
 char cardsShow[15] = {'A', '2', '3', '4', '5', '6', '7', '8', '9',
                       't', 'J', 'Q', 'K', 'w', 'W'};
 
+
 // 玩家初始化
 Player playerInit(Player player) {
     player.sum = 0;
     player.cardNum = 0;
     return player;
+}
+
+
+// 牌库模式选择/初始化
+Deck deckModeChoose(Deck deck) {
+    int mode;   // 牌库模式
+    printf("选择牌库模式：\n0、自定义牌组模式；1、13 模式；2、4*10 模式；3、52 两小王模式；4、52 大小王模式;\n");
+    scanf("%d", &mode);
+    // 牌库放牌
+    if (mode) {
+        for (int i = 0; i < 15; ++i) {
+            deck.cards[i] = decks[deck.playMode - 1][i];
+        }
+    } else {
+        int tmp;
+        for (int i = 0; i < 15; ++i) {
+            scanf("%d", &tmp);
+            deck.cards[i] = tmp;
+        }
+    }
+
+    // 点数计算规则定义
+    printf("是否开启下列点数计算模式：0、否；1、是；\n");
+    printf("自定义牌面权重\n");
+    scanf("%d", &mode);
+    deck.scoreMode = mode;
+    if (mode) {   // 自定义权重
+        printf("是否不同牌不同权重\n");
+        scanf("%d", &mode);
+        deck.scoreMode += mode << 1;
+        if (mode) {   // 如果不同权重
+            printf("请输入 15 种牌的各自权重\n");
+            for (int i = 0; i < 15; ++i) {
+                scanf("%f", &deck.weight[i]);
+            }
+        } else {   // 如果相同权重
+            printf("请输入牌的权重\n");
+            float tmp;
+            scanf("%f", &tmp);
+            for (int i = 0; i < 15; ++i) {
+                deck.weight[i] = tmp;
+            }
+        }
+    } else {    // 不自定义
+        for (int i = 0; i < 15; ++i) {
+            deck.weight[i] = 1;
+        }
+    }
+    printf("是否 J、Q、K、王设置为 10\n");
+    scanf("%d", &mode);
+    deck.scoreMode += mode << 2;
+    printf("是否 A 设置为可视情况作 1 和 11\n");
+    scanf("%d", &mode);
+    deck.scoreMode += mode << 3;
+    return deck;
+}
+
+
+// 继续 使代码暂停，直到有任意输入时继续运行，顺便清空控制台
+void GoOn(){
+    char op[10];
+    // 翻页 2 次，第一次使上一个人进入空白页，第二次由下一个人输入，从空白页翻到他的页面，保证看不见他人牌
+    for (int i = 0; i < 2; ++i) {
+        printf("\n输入任意字符继续\n");
+        scanf("%s",op);
+        system("cls");   // 清空控制台（在这里就是直接往上翻，使其他人看不见）
+    }
+}
+
+
+// 显示玩家当前牌和总点数
+void showCards(Player player){
+    printf("\n您目前的牌有：\n");
+    for (int i = 0; i < player.cardNum; ++i) {
+        printf("%c ",cardsShow[player.cards[i]-1]);
+    }
+    printf("\n您目前的点数总和是：%f\n",player.sum);
+}
+
+
+// 显示当前所有玩家资金
+void showMoney(Player players[],int playerNum){
+    printf("\n当前各玩家资金如下：\n");
+    for (int i = 0; i < playerNum; ++i) {
+        printf("%d 号玩家：%f 分\n",i,players[i].money);
+    }
+}
+
+
+// 榜单输出
+void listOut(Player players[], Deck deck, int playerNum) {
+    printf("\n榜单如下：");
+    for (int i = 0; i < playerNum; ++i) {
+        if (deck.playMode) {
+            printf("\n玩家编号 %d 总分 %f\n持有牌面", players[i].idx, players[i].sum);
+            for (int j = 0; j < players[i].cardNum; ++j) {
+                printf("%c ", cardsShow[players[i].cards[j] - 1]);
+            }
+        } else {
+            printf("\n玩家编号 %d 总分 %f", players[i].idx, players[i].money);
+        }
+    }
+}
+
+
+// 赌资输入
+float stakeInput(Player player){
+    float stake;
+    scanf("%f", &stake);
+    while (stake<=0 || stake>player.money){
+        printf("您的赌资输入不合法，赌资应当在 0 到您的全部资金范围内，请重新输入\n");
+        scanf("%f", &stake);
+    }
+    return stake;
 }
 
 
@@ -156,61 +271,6 @@ int getWinnerStake(Player players[], int num) {
 }
 
 
-// 牌库模式选择
-Deck deckModeChoose(Deck deck) {
-    int mode;   // 牌库模式
-    printf("选择牌库模式：\n0、自定义牌组模式；1、13 模式；2、4*10 模式；3、52 两小王模式；3、52 大小王模式;\n");
-    scanf("%d", &mode);
-    // 牌库放牌
-    if (mode) {
-        for (int i = 0; i < 15; ++i) {
-            deck.cards[i] = decks[deck.playMode - 1][i];
-        }
-    } else {
-        int tmp;
-        for (int i = 0; i < 15; ++i) {
-            scanf("%d", &tmp);
-            deck.cards[i] = tmp;
-        }
-    }
-
-    // 点数计算规则定义
-    printf("是否开启下列点数计算模式：0、否；1、是；\n");
-    printf("自定义牌面权重\n");
-    scanf("%d", &mode);
-    deck.scoreMode = mode;
-    if (mode) {   // 自定义权重
-        printf("是否不同牌不同权重\n");
-        scanf("%d", &mode);
-        deck.scoreMode += mode << 1;
-        if (mode) {   // 如果不同权重
-            printf("请输入 15 种牌的各自权重\n");
-            for (int i = 0; i < 15; ++i) {
-                scanf("%f", &deck.weight[i]);
-            }
-        } else {   // 如果相同权重
-            printf("请输入牌的权重\n");
-            float tmp;
-            scanf("%f", &tmp);
-            for (int i = 0; i < 15; ++i) {
-                deck.weight[i] = tmp;
-            }
-        }
-    } else {    // 不自定义
-        for (int i = 0; i < 15; ++i) {
-            deck.weight[i] = 1;
-        }
-    }
-    printf("是否 J、Q、K、王设置为 10\n");
-    scanf("%d", &mode);
-    deck.scoreMode += mode << 2;
-    printf("是否 A 设置为可视情况作 1 和 11\n");
-    scanf("%d", &mode);
-    deck.scoreMode += mode << 3;
-    return deck;
-}
-
-
 // 游玩过程 - 单次基础游玩
 int playBase(Player players[], Deck deck, int playerNum) {
     srand(time(NULL));
@@ -221,9 +281,11 @@ int playBase(Player players[], Deck deck, int playerNum) {
 //    }
     // 初始化玩家
     for (int i = 0; i < playerNum; ++i) {
-        printf("%d 号玩家：\n", i);
+        printf("%d 号玩家初始化完成\n", i);
         players[i] = playerInit(players[i]);
     }
+
+    GoOn();   // 清空控制台
 
     // 正式游戏
     while (winner < 0) {
@@ -248,9 +310,25 @@ int playBase(Player players[], Deck deck, int playerNum) {
 
                 if (players[i].sum >= 24) {   // 爆牌直接跳过
                     continue;
-                } else if (players[i].vip) {   // 是 VIP 看牌
-                    printf("%d 号玩家，你的下一张牌是 %c\n是否要这张牌：\n0、否；1、是\n", i, cardsShow[card - 1]);
-                    scanf("%d", &need);
+                } else {
+                    // 先判定是否电脑
+                    if (players[i].computer) {
+                        // 再判定是否是 VIP
+                        if (players[i].vip) {
+                            Player tmp = players[i];
+                            tmp.cards[tmp.cardNum++] = card;
+                            tmp.sum = score(deck, tmp);   // 求分
+                            need = tmp.sum > 24 ? 0 : 1;   // 如果加进去后爆牌则不要，否则要
+                        } else {
+                            need = rand() % 2;
+                        }
+                    } else {   // 真人
+                        if (players[i].vip) {   // 是 VIP
+                            printf("%d 号玩家，你的下一张牌是 %c\n", i, cardsShow[card - 1]);
+                        }
+                        printf("%d 号玩家，你是否要这张牌：\n0、否；1、是\n", i);
+                        scanf("%d", &need);
+                    }
                 }
 
                 if (need) {   // 要牌
@@ -259,7 +337,7 @@ int playBase(Player players[], Deck deck, int playerNum) {
                     // 加牌
                     players[i].cards[players[i].cardNum++] = card;
                     players[i].sum = score(deck, players[i]);   // 求分
-                    printf("%d 号玩家目前有 %d 张牌", i, players[i].cardNum);
+                    printf("%d 号玩家目前有 %d 张牌\n", i, players[i].cardNum);
 
                     // 情况判定：爆牌、自动胜利、是否开牌
                     if (players[i].sum > 24) {
@@ -271,6 +349,8 @@ int playBase(Player players[], Deck deck, int playerNum) {
                     }
                 }
 
+                showCards(players[i]);   // 显示角色卡牌和总点数
+                GoOn();   // 清空控制台
 
             }
         } else {   // 爆牌人数过多 未爆牌玩家直接胜利
@@ -303,6 +383,7 @@ int playBase(Player players[], Deck deck, int playerNum) {
             printf("\n更多人不同意开牌\n");
         }
 
+        GoOn();   // 清空控制台
 
     }
     return winner;
@@ -315,7 +396,7 @@ int playStake(Player players[], Deck deck, int playerNum, int freq) {
     while (freq--) {
         for (int i = 0; i < playerNum; ++i) {
             printf("请 %d 号玩家输入赌注\n", i);
-            scanf("%f", &stakes[i]);
+            stakes[i] = stakeInput(players[i]);
         }
         int winner = playBase(players, deck, playerNum);
         printf("\n本轮 %d 胜利\n\n", winner);
@@ -326,29 +407,18 @@ int playStake(Player players[], Deck deck, int playerNum, int freq) {
                 players[i].money -= stakes[i];
             }
         }
+
+        showMoney(players,playerNum);   // 输出各玩家剩余资金
+        GoOn();   // 清空控制台
+
     }
     return getWinnerStake(players, playerNum);
 }
 
 
-// 榜单输出
-void listOut(Player players[], Deck deck, int playerNum) {
-    printf("\n榜单如下：");
-    for (int i = 0; i < playerNum; ++i) {
-        if (deck.playMode) {
-            printf("\n玩家编号 %d 总分 %f\n持有牌面", players[i].idx, players[i].sum);
-            for (int j = 0; j < players[i].cardNum; ++j) {
-                printf("%c ", cardsShow[players[i].cards[j] - 1]);
-            }
-        } else {
-            printf("\n玩家编号 %d 总分 %f", players[i].idx, players[i].money);
-        }
-    }
-}
-
-
 // 主函数
 int main() {
+
     int nextGame = 1;   // 是否进行下一局游戏；1-是，进行；0-否，不进行
     while (nextGame) {
         Deck deck;
@@ -364,13 +434,8 @@ int main() {
             players[i].money = 100;
             printf("  该玩家是： 0、真人； 1、电脑；\n");
             scanf("%d", &players[i].computer);
-            if (players[i].computer) {
-                players[i].vip = 0;
-            } else {
-                printf("  该玩家是否 VIP： 0、否； 1、是；\n");
-                scanf("%d", &players[i].vip);
-            }
-//            players[i] = playerInit(players[i]);
+            printf("  该玩家是否 VIP： 0、否； 1、是；\n");
+            scanf("%d", &players[i].vip);
         }
         printf("玩家定义完成\n");
 

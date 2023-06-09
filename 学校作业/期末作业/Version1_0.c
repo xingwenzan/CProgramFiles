@@ -105,7 +105,7 @@ Deck deckModeChoose(Deck deck) {
     // 牌库放牌
     if (mode) {
         for (int i = 0; i < 15; ++i) {
-            deck.cards[i] = decks[deck.playMode - 1][i];
+            deck.cards[i] = decks[deck.mode - 1][i];
         }
     } else {
         int tmp;
@@ -219,7 +219,7 @@ int playStake(Player players[], Deck deck, int playerNum, int freq) {
 void listOut(Player players[], Deck deck, int playerNum) {
     printf("\n榜单如下：");
     for (int i = 0; i < playerNum; ++i) {
-        if (deck.playMode) {
+        if (deck.mode) {
             printf("\n玩家编号 %d 总分 %d\n持有牌面", players[i].idx, players[i].sum);
             for (int j = 0; j < players[i].cardNum; ++j) {
                 printf("%d ", players[i].cards[j]);
@@ -256,15 +256,15 @@ int main() {
 
         // 游玩模式选择
         printf("选择游玩模式：\n0、赌注模式； 1、常规模式；\n");
-        scanf("%d", &deck.playMode);
+        scanf("%d", &deck.mode);
         int freq;
-        if (!deck.playMode) {
+        if (!deck.mode) {
             printf("赌注模式下游玩轮数\n");
             scanf("%d", &freq);
         }
 
         // 输出榜单和胜利者
-        int winner = deck.playMode ? playBase(players, deck, playerNum) : playStake(players, deck, playerNum, freq);
+        int winner = deck.mode ? playBase(players, deck, playerNum) : playStake(players, deck, playerNum, freq);
         listOut(players, deck, playerNum);
         printf("\n%d 号玩家胜利\n\n是否开启下一局\n0、否；1、是\n", winner);
         scanf("%d", &nextGame);
