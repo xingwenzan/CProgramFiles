@@ -13,6 +13,7 @@ add_executable(AlgorithmC main.c Basic/BasicAlgorithms/QuickSort/QuickSort.c Bas
         Basic/DataStructure/AndLookup/MergeCollection.c
         Basic/DataStructure/AndLookup/ConnectedBlockPointNum.c
         Basic/DataStructure/AndLookup/FoodChain.c
-        学校作业/期末作业/Version1.c
-        学校作业/期末作业/Version2.c
+        学校作业/期末作业/Version1_0.c
+        学校作业/期末作业/Version1_1.c
+        Basic/DataStructure/Heap/HeapSort.c
 )
