@@ -314,7 +314,7 @@ int playBase(Player players[], Deck deck, int playerNum) {
         int nextCards[playerNum];
         // 抽牌
         for (int i = 0; i < playerNum; ++i) {
-            if (players[i].sum < 24 && !players[i].out && players[i].cardNum<5) {   // 只给未淘汰且未爆牌且未满牌玩家抽
+            if (players[i].sum < 24 && !players[i].out && players[i].cardNum<5) {   // 只给未淘汰且未爆牌玩家抽
                 int tmp = rand() % 15;
                 deck.cards[tmp]--;
                 nextCards[i] = tmp + 1;   // 由于牌面是 1-15，而储存是 0-14，故加一
@@ -328,7 +328,7 @@ int playBase(Player players[], Deck deck, int playerNum) {
         for (int i = 0; i < playerNum && winner < 0; ++i) {
             int num = players[i].idx, card = nextCards[i], need = 1;   // 当前玩家实际编号 当前抽牌 是否要牌
 
-            if (players[i].sum >= 24 || players[i].out || players[i].cardNum<5) {   // 爆牌或淘汰或满牌直接跳过
+            if (players[i].sum >= 24 || players[i].out || players[i].cardNum>=5) {   // 爆牌或淘汰直接跳过
                 continue;
             } else {
                 // 先判定是否电脑
@@ -501,6 +501,7 @@ int main() {
 
         // 输出榜单和胜利者
         int winner = deck.playMode ? playBase(players, deck, playerNum) : playStake(players, deck, playerNum, freq);
+        GoOn();
         listOut(players, deck, playerNum);
         printf("\n%d 号玩家胜利\n\n是否开启下一局\n0、否；1、是\n", winner);
         scanf("%d", &nextGame);
