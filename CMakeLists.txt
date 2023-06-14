@@ -19,6 +19,7 @@ add_executable(AlgorithmC main.c Basic/BasicAlgorithms/QuickSort/QuickSort.c Bas
         学校作业/期末作业/Version1_2.c
         学校作业/期末作业/Version1_3.c
         Basic/DataStructure/Heap/MockHeap.c
+        Basic/DataStructure/Hash/AnalogHash.c
 )
 
 link_libraries(libeasyx.a)
