@@ -32,6 +32,10 @@
         - [哈希表](Basic/DataStructure/Hash)
             - [模拟散列表](Basic/DataStructure/Hash/AnalogHash.c)
             - [字符串哈希](Basic/DataStructure/Hash/StringHash.c)
+    - [搜索与图论](Basic/SearchAndGraphTheory) &#x2002;
+      包括DFS，BFS，树与图的深度优先遍历，树与图的广度优先遍历，拓扑排序，Dijkstra，bellman-ford，spfa，Floyd，Prim，Kruskal，染色法判定二分图，匈牙利算法等内容。
+        - [DFS](Basic/SearchAndGraphTheory/DFS)
+            - [排列数字](Basic/SearchAndGraphTheory/DFS/ArrangeNumbers.c)
     - [数学知识](Basic/MathematicalKnowledge) &#x2002; 包括质数，约数，欧拉函数，快速幂，扩展欧几里得算法，中国剩余定理，高斯消元，求组合数，容斥原理，博弈论等内容。
         - [约数](Basic/MathematicalKnowledge/Approximation)
             - [最大公约数](Basic/MathematicalKnowledge/Approximation/GreatestCommonDivisor.c)
