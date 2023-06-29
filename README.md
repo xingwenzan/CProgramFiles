@@ -39,6 +39,7 @@
             - [n-皇后问题](Basic/SearchAndGraphTheory/DFS/NQueens.c)
         - [BFS](Basic/SearchAndGraphTheory/BFS)
             - [走迷宫](Basic/SearchAndGraphTheory/BFS/MazeWalking.c)
+            - `八数码` &#x2002; 太麻烦了，这个就不写了吧
     - [数学知识](Basic/MathematicalKnowledge) &#x2002; 包括质数，约数，欧拉函数，快速幂，扩展欧几里得算法，中国剩余定理，高斯消元，求组合数，容斥原理，博弈论等内容。
         - [约数](Basic/MathematicalKnowledge/Approximation)
             - [最大公约数](Basic/MathematicalKnowledge/Approximation/GreatestCommonDivisor.c)
