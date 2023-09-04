@@ -21,7 +21,8 @@ add_executable(AlgorithmC main.c Basic/BasicAlgorithms/QuickSort/QuickSort.c Bas
         Basic/DataStructure/Heap/MockHeap.c
         Basic/DataStructure/Hash/AnalogHash.c
         Basic/DataStructure/Hash/StringHash.c Basic/SearchAndGraphTheory/DFS/ArrangeNumbers.c Basic/SearchAndGraphTheory/DFS/NQueens.c Basic/SearchAndGraphTheory/BFS/MazeWalking.c Basic/SearchAndGraphTheory/DFS/DFS.c Basic/SearchAndGraphTheory/BFS/BFS.c Basic/SearchAndGraphTheory/TopologicalSort.c Basic/SearchAndGraphTheory/Dijkstra/DijkstraI.c Basic/SearchAndGraphTheory/Dijkstra/DijkstraII.c
-        Basic/SearchAndGraphTheory/BellmanFord.c)
+        Basic/SearchAndGraphTheory/BellmanFord.c
+        Basic/SearchAndGraphTheory/SPFA/FindShortestPath.c)
 
 link_libraries(libeasyx.a)
 
