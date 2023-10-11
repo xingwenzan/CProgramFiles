@@ -11,7 +11,7 @@
 #define M 10010
 
 int n, m;
-int f[N][N], d[N];
+int f[N][N], d[N];   // d 存的是 1 到 n 的最小距离
 bool st[N];
 
 void init() {

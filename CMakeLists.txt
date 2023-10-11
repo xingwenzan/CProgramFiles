@@ -24,7 +24,8 @@ add_executable(AlgorithmC main.c Basic/BasicAlgorithms/QuickSort/QuickSort.c Bas
         Basic/SearchAndGraphTheory/BellmanFord.c
         Basic/SearchAndGraphTheory/SPFA/FindShortestPath.c
         Basic/SearchAndGraphTheory/SPFA/JudgmentNegativeLoop.c
-        Basic/SearchAndGraphTheory/Floyd.c)
+        Basic/SearchAndGraphTheory/Floyd.c
+        Basic/SearchAndGraphTheory/Prim.c)
 
 link_libraries(libeasyx.a)
 
