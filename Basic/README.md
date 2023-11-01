@@ -54,6 +54,9 @@
 - [数学知识](MathematicalKnowledge) &#x2002; 包括质数，约数，欧拉函数，快速幂，扩展欧几里得算法，中国剩余定理，高斯消元，求组合数，容斥原理，博弈论等内容。
     - [质数](MathematicalKnowledge/PrimeNumbers)
         - [试除法判定质数](MathematicalKnowledge/PrimeNumbers/TrialDivision.c)
-        - [分解质因数](MathematicalKnowledge/Approximation/FactoringPrimeFactors.c)
+        - [分解质因数](MathematicalKnowledge/PrimeNumbers/FactoringPrimeFactors.c)
+        - [筛质数](MathematicalKnowledge/PrimeNumbers/SievePrimeNumber)
+            - [朴素筛法](MathematicalKnowledge/PrimeNumbers/SievePrimeNumber/Simple.c)
+            - [线性筛法](MathematicalKnowledge/PrimeNumbers/SievePrimeNumber/Linear.c)
     - [约数](MathematicalKnowledge/Approximation)
         - [最大公约数](MathematicalKnowledge/Approximation/GreatestCommonDivisor.c)
