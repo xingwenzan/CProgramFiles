@@ -59,4 +59,5 @@
             - [朴素筛法](MathematicalKnowledge/PrimeNumbers/SievePrimeNumber/Simple.c)
             - [线性筛法](MathematicalKnowledge/PrimeNumbers/SievePrimeNumber/Linear.c)
     - [约数](MathematicalKnowledge/Approximation)
+        - [试除法求约数](MathematicalKnowledge/Approximation/TrialDivision.c)
         - [最大公约数](MathematicalKnowledge/Approximation/GreatestCommonDivisor.c)
