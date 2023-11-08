@@ -61,3 +61,4 @@
     - [约数](MathematicalKnowledge/Approximation)
         - [试除法求约数](MathematicalKnowledge/Approximation/TrialDivision.c)
         - [最大公约数](MathematicalKnowledge/Approximation/GreatestCommonDivisor.c)
+        - [约数个数](MathematicalKnowledge/Approximation/ApproximateNumber.c)
