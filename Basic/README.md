@@ -63,3 +63,6 @@
         - [最大公约数](MathematicalKnowledge/Approximation/GreatestCommonDivisor.c)
         - [约数个数](MathematicalKnowledge/Approximation/ApproximateNumber.c)
         - [约数之和](MathematicalKnowledge/Approximation/DivisorsSum.c)
+    - [欧拉函数](MathematicalKnowledge/EulerFunction)
+        - [欧拉函数](MathematicalKnowledge/EulerFunction/EulerFunction.c)
+        - 
