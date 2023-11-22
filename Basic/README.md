@@ -65,4 +65,5 @@
         - [约数之和](MathematicalKnowledge/Approximation/DivisorsSum.c)
     - [欧拉函数](MathematicalKnowledge/EulerFunction)
         - [欧拉函数](MathematicalKnowledge/EulerFunction/EulerFunction.c)
-        - 
+        - [筛法求欧拉函数](MathematicalKnowledge/EulerFunction/Linear.c)
+    - 
