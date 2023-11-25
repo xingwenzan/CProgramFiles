@@ -66,4 +66,5 @@
     - [欧拉函数](MathematicalKnowledge/EulerFunction)
         - [欧拉函数](MathematicalKnowledge/EulerFunction/EulerFunction.c)
         - [筛法求欧拉函数](MathematicalKnowledge/EulerFunction/Linear.c)
-    - 
+    - [快速幂](MathematicalKnowledge/FastPower)
+        - [快速幂](MathematicalKnowledge/FastPower/FastPower.c)
