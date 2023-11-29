@@ -68,3 +68,4 @@
         - [筛法求欧拉函数](MathematicalKnowledge/EulerFunction/Linear.c)
     - [快速幂](MathematicalKnowledge/FastPower)
         - [快速幂](MathematicalKnowledge/FastPower/FastPower.c)
+        - [快速幂求逆元](MathematicalKnowledge/FastPower/FindInverseElement.c)
