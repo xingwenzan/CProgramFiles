@@ -71,3 +71,4 @@
         - [快速幂求逆元](MathematicalKnowledge/FastPower/FindInverseElement.c)
     - [扩展欧几里得算法](MathematicalKnowledge/ExtendedEuclideanAlgorithm)
         - [扩展欧几里得算法](MathematicalKnowledge/ExtendedEuclideanAlgorithm/ExtendedEuclideanAlgorithm.c)
+        - [线性同余方程](MathematicalKnowledge/ExtendedEuclideanAlgorithm/LinearCongruenceEquation.c)
