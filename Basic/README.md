@@ -73,3 +73,6 @@
         - [扩展欧几里得算法](MathematicalKnowledge/ExtendedEuclideanAlgorithm/ExtendedEuclideanAlgorithm.c)
         - [线性同余方程](MathematicalKnowledge/ExtendedEuclideanAlgorithm/LinearCongruenceEquation.c)
     - [中国剩余定理](MathematicalKnowledge/ChineseRemainderTheorem.c)
+    - [高斯消元](https://www.acwing.com/activity/content/punch_the_clock/11/)&#x2002;太麻烦，不写了
+    - [求组合数](MathematicalKnowledge/CombinationsNumber)
+        - [求组合数 I](MathematicalKnowledge/CombinationsNumber/CI.c)
