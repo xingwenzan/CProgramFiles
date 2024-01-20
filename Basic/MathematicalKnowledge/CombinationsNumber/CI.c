@@ -1,7 +1,7 @@
 //
 // Created by 86159 on 2024-01-17.
-// 求组合数 I
-// https://www.acwing.com/problem/content/887/
+// 求组合数 I   https://www.acwing.com/problem/content/887/
+// 预处理 C[a][b] = C[a-1][b] + C[a-1][b-1]
 //
 #include "stdio.h"
 

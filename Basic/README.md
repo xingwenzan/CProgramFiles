@@ -76,3 +76,4 @@
     - [高斯消元](https://www.acwing.com/activity/content/punch_the_clock/11/)&#x2002;太麻烦，不写了
     - [求组合数](MathematicalKnowledge/CombinationsNumber)
         - [求组合数 I](MathematicalKnowledge/CombinationsNumber/CI.c)
+        - [求组合数 II](MathematicalKnowledge/CombinationsNumber/CII.c)
