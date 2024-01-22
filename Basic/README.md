@@ -77,3 +77,4 @@
     - [求组合数](MathematicalKnowledge/CombinationsNumber)
         - [求组合数 I](MathematicalKnowledge/CombinationsNumber/CI.c)
         - [求组合数 II](MathematicalKnowledge/CombinationsNumber/CII.c)
+        - [求组合数 III](MathematicalKnowledge/CombinationsNumber/CIII.c)
