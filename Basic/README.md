@@ -81,3 +81,5 @@
         - [求组合数 IV](MathematicalKnowledge/CombinationsNumber/CIV.c)
         - [满足条件的01序列](MathematicalKnowledge/CombinationsNumber/Sequence01.c)
     - [容斥原理](MathematicalKnowledge/InclusionExclusionPrinciple.c)
+    - [博弈论](MathematicalKnowledge/GameTheory)
+        - [Nim游戏](MathematicalKnowledge/GameTheory/NimGames.c)
