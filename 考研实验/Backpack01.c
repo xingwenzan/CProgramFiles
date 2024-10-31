@@ -1,3 +1,6 @@
+//
+// Created by 86159 on 2024/10/31.
+//
 #include "stdio.h"
 
 int N, V;
