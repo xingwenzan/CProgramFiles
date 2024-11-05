@@ -1,3 +1,6 @@
+//
+// Created by 86159 on 2024/11/5.
+//
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
@@ -32,9 +35,9 @@ BiTree getHuffman(Heap *heap);
 
 int main() {
     int n;
-    printf("ÊäÈëÓÐ¼¸¸ö×Ö·û£º");
+    printf("è¾“å…¥æœ‰å‡ ä¸ªå­—ç¬¦ï¼š");
     scanf("%d", &n);
-    printf("\nÊäÈë×Ö·ûºÍÈ¨Öµ£º");
+    printf("\nè¾“å…¥å­—ç¬¦å’Œæƒå€¼ï¼š");
     Heap *h = (Heap *) malloc(sizeof(Heap));
     h->nodesNum = n;
     for (int i = 0; i < n; ++i) {
@@ -47,7 +50,7 @@ int main() {
     init(h);
     BiTree Huffman = getHuffman(h);
 
-    printf("\nÊäÈë±àÂë£º");
+    printf("\nè¾“å…¥ç¼–ç ï¼š");
     char *string = (char *) malloc(sizeof(char));
     scanf("%s", string);
 
