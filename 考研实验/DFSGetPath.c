@@ -1,3 +1,6 @@
+//
+// Created by 86159 on 2024/11/8.
+//
 #include "stdlib.h"
 #include "stdio.h"
 
@@ -27,16 +30,16 @@ void dfs(Graph *graph,int *stack,int *idx,int *visited,int cur,int end);
 int main(){
     Graph *g = (Graph*) malloc(sizeof(Graph));
     int a,b;
-    printf("µãÊý£º");
+    printf("ç‚¹æ•°ï¼š");
     scanf("%d",&a);
     init(g,a);
-    printf("»­Í¼£º");
+    printf("ç”»å›¾ï¼š");
     while (1){
         scanf("%d%d",&a,&b);
         if(a==b)break;
         add(g,a,b);
     }
-    printf("Ä¿±ê£º");
+    printf("ç›®æ ‡ï¼š");
     scanf("%d%d",&a,&b);
     getPath(g,a,b);
 }
