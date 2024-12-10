@@ -1,16 +1,15 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-// Á´±í
 typedef struct LineNode {
     int data;
     struct LineNode *next;
 } LineNode, *LineTable;
 
 /**
- * Á´±í´´½¨
- * @use ÊäÈëÁ´±íÔªËØµÄÊı¾İÖµ£¬¸÷¸öÖµÖ®¼äÓÃ¿Õ¸ñ¡¢»Ø³µÁ¬½Ó£¬×îºóÓÃÒ»¸öµ¥¶ÀµÄ ¡®0¡¯ ½áÎ²
- * @return Á´±í
+ * é“¾è¡¨åˆ›å»º
+ * @use è¾“å…¥é“¾è¡¨å…ƒç´ çš„æ•°æ®å€¼ï¼Œå„ä¸ªå€¼ä¹‹é—´ç”¨ç©ºæ ¼ã€å›è½¦è¿æ¥ï¼Œæœ€åç”¨ä¸€ä¸ªå•ç‹¬çš„ â€˜0â€™ ç»“å°¾
+ * @return é“¾è¡¨
  */
 LineTable create() {
     LineTable ans = (LineNode *) malloc(sizeof(LineNode));
@@ -32,8 +31,8 @@ LineTable create() {
 }
 
 /**
- * Á´±íÊä³ö
- * @param table(Á´±í)
+ * é“¾è¡¨è¾“å‡º
+ * @param table(é“¾è¡¨)
  */
 void outTable(LineTable table) {
     if (table == NULL) {
@@ -50,8 +49,8 @@ void outTable(LineTable table) {
 
 
 /**
- * Á´±íÄæÖÃ
- * @param head (Á´±íÍ·Ö¸Õë)
+ * é“¾è¡¨é€†ç½®
+ * @param head (é“¾è¡¨å¤´æŒ‡é’ˆ)
  */
 void reserve(LineTable head) {
     if (head == NULL || head->next == NULL) {
@@ -69,10 +68,10 @@ void reserve(LineTable head) {
 }
 
 /**
- * Á´±íºÏ²¢
- * @param A£¨Á´±í A£©
- * @param B£¨Á´±í B£©
- * @return ºÏ²¢ºóµÄÁ´±í
+ * é“¾è¡¨åˆå¹¶
+ * @param Aï¼ˆé“¾è¡¨ Aï¼‰
+ * @param Bï¼ˆé“¾è¡¨ Bï¼‰
+ * @return åˆå¹¶åçš„é“¾è¡¨
  */
 LineTable merge(LineTable A, LineTable B) {
     LineTable C = A, tmp = B;
@@ -103,10 +102,10 @@ LineTable merge(LineTable A, LineTable B) {
 }
 
 /**
- * Á´±íÄæĞòºÏ²¢
- * @param A £¨Á´±í A£©
- * @param B £¨Á´±í B£©
- * @return ÄæĞòºÏ²¢ºóµÄÁ´±í
+ * é“¾è¡¨é€†åºåˆå¹¶
+ * @param A ï¼ˆé“¾è¡¨ Aï¼‰
+ * @param B ï¼ˆé“¾è¡¨ Bï¼‰
+ * @return é€†åºåˆå¹¶åçš„é“¾è¡¨
  */
 LineTable merge_reserve(LineTable A,LineTable B){
     LineTable C = A,tmp = B;
@@ -144,23 +143,23 @@ LineTable merge_reserve(LineTable A,LineTable B){
 int main() {
 
     int choose;
-    printf("ÇëÑ¡Ôñ½øĞĞµÄ²Ù×÷£º\n1.Á´±íÄæÖÃ\n2.Á´±íºÏ²¢\n3.Á´±íºÏ²¢²¢ÄæÖÃ\n");
+    printf("è¯·é€‰æ‹©è¿›è¡Œçš„æ“ä½œï¼š\n1.é“¾è¡¨é€†ç½®\n2.é“¾è¡¨åˆå¹¶\n3.é“¾è¡¨åˆå¹¶å¹¶é€†ç½®\n");
     scanf("%d", &choose);
     switch (choose) {
-        case 1: {//Á´±íÄæÖÃ
+        case 1: {//é“¾è¡¨é€†ç½®
             LineTable A = create();
             reserve(A);
             outTable(A);
             break;
         }
-        case 2: {// Á´±íºÏ²¢
+        case 2: {// é“¾è¡¨åˆå¹¶
             LineTable A = create();
             LineTable B = create();
             LineTable C = merge(A, B);
             outTable(C);
             break;
         }
-        case 3:{// Á´±íºÏ²¢²¢ÄæÖÃ
+        case 3:{
             LineTable A = create();
             LineTable B = create();
             LineTable C = merge_reserve(A, B);
@@ -168,7 +167,7 @@ int main() {
             break;
         }
         default:
-            printf("ÎŞĞ§Ñ¡Ïî\n");
+            printf("æ— æ•ˆé€‰é¡¹\n");
     }
 
 
